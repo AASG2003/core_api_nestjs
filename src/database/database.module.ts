@@ -1,16 +1,18 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService, ConfigModule } from '@nestjs/config';
-import { Clientes } from '../clientes/entities/Clientes.entity';
-import { Inventario } from '../inventarios/entities/inventarios.entity';
-import { Factura } from '../facturas/entities/Factura.entity';
-import { CategoriaProducto } from '../categoriasproductos/entities/categoriasproducto.entity';
-import { LineaPedido } from '../lineapedidos/entities/LineaPedido.entity';
-import { Lote } from '../lotes/entities/Lote.entity';
-import { Pago } from '../pagos/entities/Pago.entity';
-import { Productos } from '../productos/entities/Productos.entity';
-import { Proveedor } from '../proveedores/entities/proveedores.entity';
-import { Pedido } from '../pedidos/entities/Pedido.entity';
+import { Usuarios } from '../usuario/entities/usuario.entity';
+import { Inventario } from '../inventario/entities/inventario.entity';
+import { Factura } from '../factura/entities/factura.entity';
+import { CategoriaProducto } from '../categoriaproducto/entities/categoriaproducto.entity';
+import { LineaPedido } from '../linea_pedido/entities/linea_pago.entity';
+import { Lote } from '../lote/entities/lote.entity';
+import { Pago } from '../pago/entities/pago.entity';
+import { Productos } from '../producto/entities/producto.entity';
+import { Proveedor } from '../proveedor/entities/proveedor.entity';
+import { Pedido } from '../pedido/entities/pedido.entity';
+import { Empleado } from '../empleado/entities/empleado.entity';
+import { Roles } from '../roles/entities/roles.entity';
 
 @Module({
   imports: [
@@ -25,7 +27,7 @@ import { Pedido } from '../pedidos/entities/Pedido.entity';
         password: configService.get<string>('database.password'),
         database: configService.get<string>('database.name'),
         entities: [
-          Clientes,
+          Usuarios,
           Inventario,
           Factura,
           CategoriaProducto,
@@ -35,6 +37,8 @@ import { Pedido } from '../pedidos/entities/Pedido.entity';
           Productos,
           Proveedor,
           Pedido,
+          Empleado,
+          Roles,
         ],
         synchronize: true,
       }),
