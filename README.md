@@ -3,7 +3,7 @@ Antes de inicializar el backend es necesario tomar en cuenta el .env.template pa
 
 ### Instalacion previo de paquetes
 ```
-npm run i
+npm install
 ```
 
 ### migracion de datos

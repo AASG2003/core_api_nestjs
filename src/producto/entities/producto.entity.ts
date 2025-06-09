@@ -25,18 +25,26 @@ export class Productos {
   nombreProducto: string | null;
 
   @Column('decimal', {
-    name: 'Precio_unidad',
+    name: 'Precio_unidad_venta',
     nullable: true,
     precision: 10,
     scale: 0,
   })
-  precioUnidad: string | null;
+  precioUnidadVenta: string | null;
 
   @Column('date', { name: 'FechaLanzamiento', nullable: true })
   fechaLanzamiento: string | null;
 
   @Column('int', { name: 'Categoria_Producto_CategoriaID' })
   categoriaProductoCategoriaId: number;
+
+  @Column('decimal', {
+    name: 'Precio_unidad_costo',
+    nullable: true,
+    precision: 10,
+    scale: 0,
+  })
+  precioUnidadCosto: string | null;
 
   @OneToMany(() => Inventario, (inventario) => inventario.productosProducto)
   inventarios: Inventario[];

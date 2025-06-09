@@ -15,6 +15,7 @@ export async function seedLote(dataSource: DataSource) {
     lote.fechaVencimiento = faker.date.future().toISOString().split('T')[0];
     lote.cantidadProducida = faker.number.int({ min: 50, max: 500 });
     lote.costoProduccion = faker.number.int({ min: 100, max: 1000 }).toString();
+    lote.defectos = faker.number.int({ min: 2, max: 10 });
     lote.proveedorProveedorId = faker.helpers.arrayElement(proveedorIds);
     registros.push(lote);
   }

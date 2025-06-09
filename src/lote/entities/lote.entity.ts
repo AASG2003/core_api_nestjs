@@ -25,6 +25,9 @@ export class Lote {
   @Column('int', { name: 'CantidadProducida', nullable: true })
   cantidadProducida: number | null;
 
+  @Column('int', { name: 'Defectos', nullable: true })
+  defectos: number | null;
+
   @Column('decimal', {
     name: 'costo_produccion',
     nullable: true,

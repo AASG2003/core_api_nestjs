@@ -17,10 +17,7 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Producto')
 @Controller('producto')
 export class ProductoController {
-  constructor(
-    @InjectRepository(Productos)
-    private readonly productoService: ProductoService
-  ) {}
+  constructor(private readonly productoService: ProductoService) {}
 
   @Post('create')
   create(@Body() producto: CreateProductoDto) {

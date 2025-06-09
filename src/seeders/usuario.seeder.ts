@@ -7,12 +7,13 @@ export async function seedUsuarios(dataSource: DataSource) {
   const userRepo = dataSource.getRepository(Usuarios);
 
   const usuarios: Usuarios[] = [];
-  for (let i = 1; i <= 1000; i++) {
+  for (let i = 1; i <= 50; i++) {
     const usuario = new Usuarios();
     usuario.usuarioId = i;
     usuario.nombreCompleto = faker.person.fullName();
     usuario.ci = faker.number.int({ min: 1000000, max: 9999999 });
     usuario.email = faker.internet.email();
+    usuario.porcentajeSatisfaccion = faker.number.int({ min: 20, max: 100 });
     usuario.fechaNacimiento = faker.date
       .birthdate()
       .toISOString()

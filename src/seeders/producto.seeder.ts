@@ -19,6 +19,36 @@ export async function seedProductos(dataSource: DataSource) {
     'Yogurt Congelado',
     'Paleta de Coco',
     'Brownie Helado',
+    'Helado de Vainilla',
+    'Helado de Chocolate',
+    'Smoothie de Fresa',
+    'Paleta de Mango',
+    'Tarta Helada',
+    'Helado de Menta',
+    'Copa de Frutas',
+    'Yogurt Congelado',
+    'Paleta de Coco',
+    'Brownie Helado',
+    'Sundae Clásico',
+    'Banana Split',
+    'Helado de Pistacho',
+    'Helado de Dulce de Leche',
+    'Helado de Frambuesa',
+    'Helado de Cookies & Cream',
+    'Helado de Café',
+    'Torta Helada de Maracuyá',
+    'Smoothie Tropical',
+    'Smoothie de Arándano',
+    'Helado Vegano de Coco',
+    'Helado Sin Azúcar de Vainilla',
+    'Yogurt con Granola y Miel',
+    'Malteada de Oreo',
+    'Malteada de Chocolate Blanco',
+    'Helado Artesanal de Queso',
+    'Helado de Limón y Albahaca',
+    'Paleta de Kiwi',
+    'Paleta de Fresa con Leche',
+    'Helado de Té Verde (Matcha)',
   ];
 
   const productos: Productos[] = [];
@@ -26,13 +56,16 @@ export async function seedProductos(dataSource: DataSource) {
   for (let i = 0; i < nombres.length; i++) {
     const prod = new Productos();
     prod.nombreProducto = nombres[i];
-    prod.precioUnidad = faker.number
-      .float({ min: 3, max: 15, fractionDigits: 2 })
+    prod.precioUnidadVenta = faker.number
+      .float({ min: 8, max: 12, fractionDigits: 2 })
       .toFixed(2);
     prod.fechaLanzamiento = faker.date
       .past({ years: 2 })
       .toISOString()
       .split('T')[0];
+    prod.precioUnidadCosto = faker.number
+      .float({ min: 13, max: 20, fractionDigits: 2 })
+      .toFixed(2);
     prod.categoriaProductoCategoriaId =
       faker.helpers.arrayElement(categoriasIds);
     productos.push(prod);

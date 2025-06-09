@@ -32,6 +32,9 @@ export class Usuarios {
   @Column('tinyint', { name: 'Genero', nullable: true })
   genero: number | null;
 
+  @Column('tinyint', { name: 'Porcentaje_Satisfaccion', nullable: true })
+  porcentajeSatisfaccion: number | null;
+
   @Column('int', { name: 'Roles_RolID' })
   rolesRolId: number;
 

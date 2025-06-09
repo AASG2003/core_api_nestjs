@@ -14,7 +14,7 @@ export async function seedLineaPedido(dataSource: DataSource) {
 
   if (pedidos.length === 0 || productos.length === 0) {
     console.warn(
-      '⚠️ No hay pedidos o productos suficientes para generar líneas de pedido.'
+      '⚠️ No hay pedidos o productos suficientes para generar líneas de pedido.',
     );
     return;
   }

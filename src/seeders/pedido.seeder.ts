@@ -14,14 +14,14 @@ export async function seedPedido(dataSource: DataSource) {
 
   if (clientes.length === 0 || empleados.length === 0) {
     console.warn(
-      '⚠️ No hay clientes o empleados suficientes para generar pedidos.'
+      '⚠️ No hay clientes o empleados suficientes para generar pedidos.',
     );
     return;
   }
 
   const pedidos: Pedido[] = [];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000; i++) {
     const pedido = new Pedido();
     pedido.fechaPedido = faker.date
       .recent({ days: 30 })
